@@ -3,7 +3,10 @@
 #Default imports
 import os
 import sys
+import json
 from DBManager import DBManager
+from DTOs.GameStatDTO import GameStatDTO
+from Serializers.JsonSerializer import JsonSerializer
 
 
 class MasterMind(object):
@@ -32,9 +35,10 @@ class MasterMind(object):
         else:
             return "Game not found"
 
-    def PlayerMove(self,id):
+    def PlayerMove(self,id, move):
+
         """TODO:Implement game move"""
-        return  "Player Move!!!"
+        return "Player Move!!!"
 
 
     def DumpDataBase(self):

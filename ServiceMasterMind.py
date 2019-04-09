@@ -25,9 +25,7 @@ def create_game():
 def player_move():
     id_game = request.args.get('id')
     move = request.args.getlist('move')
-    for i in move:
-        print i
-    return master_mind.PlayerMove()
+    return master_mind.PlayerMove(id_game,move)
 
 
 
