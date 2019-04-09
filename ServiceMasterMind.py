@@ -3,18 +3,22 @@
 from flask import Flask, jsonify
 from flask import request
 
-app = Flask(__name__)
 
+from MasterMindGame.MasterMind import MasterMind
+
+app = Flask(__name__)
+master_mind = MasterMind()
 
 @app.route('/MasterMind', methods=['GET'])
 def get_game():
     id_game = request.args.get('id')
-    return "RETURN NEW GAME " + str(id_game)
+    return master_mind.GetExistingGame(id_game)
 
 
 @app.route('/MasterMind', methods=['POST'])
 def create_game():
-    return "NEW GAME"
+    id_game = request.args.get('id')
+    return master_mind.NewGame(id_game)
 
 
 @app.route('/MasterMind', methods=['PUT'])
@@ -23,7 +27,7 @@ def player_move():
     move = request.args.getlist('move')
     for i in move:
         print i
-    return "NEW MOVEMENT"
+    return master_mind.PlayerMove()
 
 
 
