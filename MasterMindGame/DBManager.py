@@ -57,7 +57,7 @@ class DBManager(object):
 
     def InsertData(self,game_data):
         """
-        Try to insert data into a DB
+        Try to insert data into a DB and return id primary key
         :return:
         """
         sql = '''INSERT INTO games(game_data) VALUES(?)'''
@@ -65,6 +65,8 @@ class DBManager(object):
         c = conn.cursor()
         c.execute(sql, (str(game_data),))
         conn.commit()
+        return int(c.lastrowid)
+
 
 
 

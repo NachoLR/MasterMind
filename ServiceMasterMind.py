@@ -17,8 +17,7 @@ def get_game():
 
 @app.route('/MasterMind', methods=['POST'])
 def create_game():
-    id_game = request.args.get('id')
-    return master_mind.NewGame(id_game)
+    return master_mind.NewGame()
 
 
 @app.route('/MasterMind', methods=['PUT'])
