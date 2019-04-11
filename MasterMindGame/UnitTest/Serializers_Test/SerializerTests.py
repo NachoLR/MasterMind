@@ -12,7 +12,6 @@ class JsonSerializer_Test(unittest.TestCase):
     def test_When_Serialices_object(self):
         string_json_serialized = JsonSerializer.JsonSerializer.SerializeObject(TestClass())
         self.assertEqual(self.string_control_serialize, string_json_serialized)
-        print string_json_serialized
         self.assertIn("[\"value_1[0]\", \"value_2[1]\"]", string_json_serialized)
 
     def test_When_Deserialices_json(self):
@@ -34,7 +33,7 @@ class TestClass(object):
 
 
 
-    if __name__ == '__main__':
-        unittest.main()
+if __name__ == '__main__':
+    unittest.main()
 
 

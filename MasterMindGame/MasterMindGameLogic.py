@@ -13,7 +13,12 @@ class MasterMindGameLogic(object):
     This class contains the logic and the operations adn rules for MasterMind game.
     This rules are based on board classic game.
     """
-    limit_attempts = 12
+    limit_attempts = 12 #Max number off attempts to declatare game finished
+
+    #The color list is composed of 10 elements to increase the possibilities of creating different combinations.
+    # Due to the operation of the random this combination generates
+    # more complex chains, including repetitions of colors in different positions.
+    # It is a statistical fact
     colors = ["green", "yellow", "red", "blue", "violet", "green", "yellow", "red", "blue", "violet"]
 
     # ========================================

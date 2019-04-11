@@ -12,8 +12,6 @@ class GameStatDTO(object):
 
     """
 
-
-
     def __init__(self):
         self.id = None
         self.attempts = 0
